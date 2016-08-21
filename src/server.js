@@ -2,6 +2,7 @@
 
 const moment = require('moment')
 const express = require('express')
+const path = require('path')
 const app = express()
 
 const parseDate = t => {
@@ -12,7 +13,12 @@ const parseDate = t => {
   return time
 }
 
-app.set('port', 5000)
+app.set('port', process.env.PORT || 5000)
+
+app.get('/', (req, res) => {
+  const staticInfo = path.join(__dirname, 'index.html')
+  res.sendFile(staticInfo)
+})
 
 app.get('/:timestamp', (req, res) => {
   const timestamp = req.params.timestamp
