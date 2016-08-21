@@ -10,8 +10,8 @@
     "freecodecamp"
   ],
   "scripts": {
-    "main": "node src/index.js",
-    "lint": "./node_modules/.bin/eslint src/*.js"
+    "start": "node server.js",
+    "lint": "./node_modules/.bin/eslint server.js"
   },
   "license": "MIT",
   "dependencies": {
